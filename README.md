@@ -5,7 +5,7 @@ A [Kimi Code](https://www.kimi.com/code/docs/en/) **User Skill** for systematic 
 It turns a rough topic into a verified, decision-ready research report, covering:
 
 - **Strategy layer** — company-level thinking (trends, opportunities, business/product/technology portfolio, product & technology roadmaps) and product-level thinking (why build it, customer problems & value, strategic fit, commercial worth), aligned to the planning chain: company strategy → roadmap → portfolio management → product planning → project initiation
-- **Verified data collection** — 11 categories: trends, market, customer needs, technology, competitor specs, competitor tech stacks, patents, suppliers, team structure, plan & timeline, finance — every data point cross-checked with cited sources and dates
+- **Verified data collection** — 12 categories: trends, market, customer needs, regulations & compliance (NMPA / FDA / CE-MDR pathways and applicable standards such as GB 9706 / IEC 60601 family, with version verification), technology, competitor specs, competitor tech stacks, patents (broken down by type — invention / utility model / design — by legal status — granted / pending — and by jurisdiction — CN / US / EU / PCT / single-country / patent families), suppliers, team structure with recruiting keywords for each role, plan & timeline, finance — every data point cross-checked with cited sources and dates
 - **Analysis** — value proposition design, build-vs-outsource-vs-resell comparison, and profitability analysis driven by an explicit financial model (assumptions → budget → ROI → payback)
 
 ## Install
