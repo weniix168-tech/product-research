@@ -1,23 +1,46 @@
 # product-research
 
-A [Kimi Code](https://www.kimi.com/code/docs/en/) **User Skill** for systematic market & product research and R&D decision support.
+A [Kimi Code](https://www.kimi.com/code/docs/en/) **User Skill** for decision-oriented market & product research.
 
-It turns a rough topic into a verified, decision-ready research report, covering:
+It turns a rough topic into a decision-ready output by **matching the research scope to the decision**: connecting evidence, assumptions, validation tasks, and recommendations — instead of always running a full search.
 
-- **Strategy layer** — company-level thinking (trends, opportunities, business/product/technology portfolio, product & technology roadmaps) and product-level thinking (why build it, customer problems & value, strategic fit, commercial worth), aligned to the planning chain: company strategy → roadmap → portfolio management → product planning → project initiation
-- **Verified data collection** — 12 categories: trends, market, customer needs, regulations & compliance (NMPA / FDA / CE-MDR pathways and applicable standards such as GB 9706 / IEC 60601 family, with version verification), technology, competitor specs, competitor tech stacks, patents (broken down by type — invention / utility model / design — by legal status — granted / pending — and by jurisdiction — CN / US / EU / PCT / single-country / patent families), suppliers, team structure with recruiting keywords for each role, plan & timeline, finance — gathered across multi-channel public sources (frontier literature incl. new technologies and animal/clinical studies, patent filings, official registries & websites, industry media & WeChat accounts, IPO filings / annual reports) — every data point cross-checked with cited sources and dates
-- **Analysis** — value proposition design, build-vs-outsource-vs-resell comparison, and profitability analysis driven by an explicit financial model (assumptions → budget → ROI → payback)
+## Task modes
+
+| Mode | Input example | Minimal output |
+| --- | --- | --- |
+| 快速初筛 (quick screen) | a new direction, public links | one-page brief: judgment, core facts, key unknowns, next step |
+| 竞品/技术专项 (competitor/tech) | product list, specs, papers or patents | like-for-like matrix, evidence, maturity gaps |
+| 立项与路线决策 (initiation) | opportunity, resources, target market | full decision report, route comparison, staged investment |
+| 更新与复盘 (update & review) | previous report + new material | change list (new / revised / withdrawn / still-unknown) |
+
+Quick tasks are never forced through full strategy + finance + team modules; modules are picked per decision and labeled 必选 / 可选 / 不适用(理由).
+
+## What's inside
+
+- `SKILL.md` — entry point: mode selection, shortest main flow, non-negotiable quality rules, module library, load-on-demand index
+- `references/` — method files loaded only when needed: evidence rules, research methods, decision framework (stage gates, PIC, portfolio, finance, regulatory, patent/FTO screening), PDMA seven-domain self-check map, prompt library, privacy rules
+- `templates/` — full report outline (16 sections for initiation mode), one-page brief, and four registers (evidence, requirements traceability, assumption & decision log, validation gate plan)
+- `examples/` — clearly labeled fictional walkthroughs (no real companies or cases)
+
+## Key rules baked in
+
+- Claims are classified (fact / vendor claim / inference / internal assumption / to-verify); key claims trace to evidence IDs with source, channel, and three dates (published / data-as-of / accessed).
+- Republished copies of the same source are **not** independent verification; "not found in search" ≠ "does not exist".
+- Requirement hypotheses are separated from validated needs; without first-hand research, only a validation plan is produced.
+- Route comparison (build / integrate / outsource / partner / resell / status quo) uses one delivery scope — no preset winners.
+- Patent stats define count vs. family; PCT is a filing route, never added to countries or types; FTO screening is a starting clue, not a legal opinion.
+- Financial inputs are marked known / estimated / assumed; profit ≠ cash flow; scenarios and sensitivity required; no fabricated precision.
+- Privacy: public sources only for the repo itself; internal data stays task-local and is never sent to external searches or written into the repo.
+
+Method framework inspired by the PDMA Body of Knowledge (7 domains), used as an omission checklist only — not an official PDMA artifact.
 
 ## Install
 
 Clone directly into your Kimi Code skills directory:
 
 ```bash
-# Kimi-specific skills
-git clone https://github.com/<your-name>/product-research.git ~/.kimi-code/skills/product-research
-
-# or the generic cross-tool directory
-git clone https://github.com/<your-name>/product-research.git ~/.agents/skills/product-research
+mkdir -p ~/.kimi-code/skills
+git clone https://github.com/weniix168-tech/product-research.git ~/.kimi-code/skills/product-research
 ```
 
 ## Usage
@@ -28,8 +51,4 @@ Manual invocation:
 /skill:product-research 你的调研主题
 ```
 
-The skill also triggers automatically when the conversation involves market research, competitor analysis, or product/initiation decisions.
-
-## Output
-
-A structured Chinese-language report (see `templates/report-template.md`) with an executive summary, strategy analysis, market & competitor insights, value proposition, plan comparison, team structure, financial model, risks, and a clear go/no-go recommendation — every claim tagged with source, date, and confidence level.
+The skill also triggers automatically when the conversation involves market research, competitor analysis, or product/initiation decisions. Quick tasks may answer with just the one-page brief; complex ones use the full report and registers.
